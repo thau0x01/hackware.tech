@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contato — Hackware</title>
+    <meta name="description"
+        content="Entre em contato com a Hackware para discutir avaliações de segurança ofensiva para sua organização." />
+    <link rel="canonical" href="https://hackware.tech/contato.html" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar" aria-label="Navegação principal">
+        <div class="container navbar__inner">
+            <a href="/" class="navbar__logo" aria-label="Hackware — Página inicial">
+                <img src="images/hackware-logo.png" alt="Hackware" class="navbar__logo-img" />
+            </a>
+
+            <ul class="navbar__nav" role="list">
+                <li><a href="/#servicos" class="navbar__link">Serviços</a></li>
+                <li><a href="/#metodologia" class="navbar__link">Metodologia</a></li>
+                <li><a href="/#diferenciais" class="navbar__link">Diferenciais</a></li>
+                <li><a href="/#autoridade" class="navbar__link">Sobre</a></li>
+            </ul>
+
+            <div class="navbar__actions">
+                <a href="contato.html" class="btn btn--primary" aria-current="page">Solicitar avaliação</a>
+                <button class="navbar__burger" id="burger" aria-label="Abrir menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <div class="navbar__mobile" id="mobile-menu">
+            <a href="/#servicos" class="navbar__mobile-link">Serviços</a>
+            <a href="/#metodologia" class="navbar__mobile-link">Metodologia</a>
+            <a href="/#diferenciais" class="navbar__mobile-link">Diferenciais</a>
+            <a href="/#autoridade" class="navbar__mobile-link">Sobre</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="contact-page">
+            <div class="container">
+
+                <!-- Header -->
+                <div class="contact-page__header reveal">
+                    <span class="eyebrow">// Contato</span>
+                    <h1 class="section-title">Discuta sua avaliação.</h1>
+                    <p class="section-subtitle" style="margin-inline:auto;">
+                        Preencha o formulário abaixo. Nossa equipe retorna em até 1 dia útil para entender seu contexto
+                        e definir o melhor caminho.
+                    </p>
+                </div>
+
+                <!-- Form block -->
+                <div class="contact-form reveal">
+                    <!-- Form -->
+                    <form id="contact-form" novalidate>
+                        <div class="form-grid">
+
+                            <div class="form-field">
+                                <label class="form-label" for="name">Nome *</label>
+                                <input id="name" name="name" type="text" class="form-input"
+                                    placeholder="Seu nome completo" required autocomplete="name" />
+                            </div>
+
+                            <div class="form-field">
+                                <label class="form-label" for="company">Empresa *</label>
+                                <input id="company" name="company" type="text" class="form-input"
+                                    placeholder="Nome da empresa" required autocomplete="organization" />
+                            </div>
+
+                            <div class="form-field">
+                                <label class="form-label" for="role">Cargo *</label>
+                                <input id="role" name="role" type="text" class="form-input"
+                                    placeholder="Ex.: CISO, CTO, Gestor de TI" required
+                                    autocomplete="organization-title" />
+                            </div>
+
+                            <div class="form-field">
+                                <label class="form-label" for="email">E-mail corporativo *</label>
+                                <input id="email" name="email" type="email" class="form-input"
+                                    placeholder="voce@empresa.com.br" required autocomplete="email" />
+                            </div>
+
+                            <div class="form-field form-field--full">
+                                <label class="form-label" for="service">Serviço de interesse</label>
+                                <select id="service" name="service" class="form-select">
+                                    <option value="">Selecione um serviço...</option>
+                                    <option value="web">Pentest em Aplicações Web</option>
+                                    <option value="infraestrutura">Pentest em Infraestrutura</option>
+                                    <option value="mobile">Pentest em Aplicações Móveis (Android / iOS)</option>
+                                    <option value="redteam">Red Team</option>
+                                    <option value="outros">Serviços Especializados / Outro</option>
+                                    <option value="naosei">Ainda não sei — preciso de orientação</option>
+                                </select>
+                            </div>
+
+                            <div class="form-field form-field--full">
+                                <label class="form-label" for="message">Conte-nos sobre seu ambiente e objetivos</label>
+                                <textarea id="message" name="message" class="form-textarea"
+                                    placeholder="Descreva brevemente o escopo, ambiente, contexto ou dúvida. Quanto mais detalhes, mais precisa será nossa proposta."></textarea>
+                            </div>
+
+                        </div>
+
+                        <button type="submit" class="btn btn--primary btn--lg form-submit" id="contact-submit">
+                            <i class="ph ph-paper-plane-tilt" aria-hidden="true"></i>
+                            Enviar mensagem
+                        </button>
+
+                        <p style="font-size:0.75rem;color:var(--text-faint);text-align:center;margin-top:1rem;">
+                            Seus dados são tratados com confidencialidade absoluta e não são compartilhados com
+                            terceiros.
+                        </p>
+                    </form>
+
+                    <!-- Success state -->
+                    <div id="form-success" class="form-success" aria-live="polite">
+                        <div class="form-success__icon" aria-hidden="true">
+                            <i class="ph ph-check-circle" style="font-size:1.75rem;"></i>
+                        </div>
+                        <h3>Mensagem recebida.</h3>
+                        <p>Nossa equipe retornará em até <strong>1 dia útil</strong> para dar sequência à sua
+                            solicitação.</p>
+                        <a href="/" class="btn btn--outline" style="margin-top:2rem;">Voltar ao início</a>
+                    </div>
+                </div>
+
+                <!-- Contact alternatives -->
+                <div style="max-width:640px;margin:2rem auto 0;text-align:center;" class="reveal">
+                    <p style="font-size:0.875rem;color:var(--text-faint);">
+                        Prefere contato direto?
+                        <a href="mailto:contato@hackware.tech"
+                            style="color:var(--accent);font-weight:600;">contato@hackware.tech</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__main">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <div class="footer__logo-mark" aria-hidden="true">
+                            <svg viewBox="0 0 20 20" fill="none">
+                                <path d="M3 10L10 3L17 10L10 17L3 10Z" stroke="white" stroke-width="1.5"
+                                    stroke-linejoin="round" />
+                                <path d="M10 7L10 13M7 10H13" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <span class="footer__logo-text">Hackware</span>
+                    </div>
+                    <p class="footer__tagline">Inteligência para defesas que precisam funcionar no mundo real.</p>
+                </div>
+
+                <div class="footer__col">
+                    <h3 class="footer__col-title">Serviços</h3>
+                    <ul class="footer__links">
+                        <li><a href="/#servicos" class="footer__link">Pentest Web</a></li>
+                        <li><a href="/#servicos" class="footer__link">Pentest Infraestrutura</a></li>
+                        <li><a href="/#servicos" class="footer__link">Pentest Mobile</a></li>
+                        <li><a href="/#servicos" class="footer__link">Red Team</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__col">
+                    <h3 class="footer__col-title">Empresa</h3>
+                    <ul class="footer__links">
+                        <li><a href="/#metodologia" class="footer__link">Metodologia</a></li>
+                        <li><a href="/#diferenciais" class="footer__link">Diferenciais</a></li>
+                        <li><a href="/#autoridade" class="footer__link">Autoridade</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__col">
+                    <h3 class="footer__col-title">Contato</h3>
+                    <ul class="footer__links">
+                        <li><a href="mailto:contato@hackware.tech"
+                                class="footer__contact-email">contato@hackware.tech</a></li>
+                    </ul>
+                    <div class="footer__social">
+                        <a href="https://linkedin.com/company/hackware" target="_blank" rel="noopener noreferrer"
+                            class="footer__social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__bottom-left">
+                    © 2025 Hackware Tecnologia e Inteligência Digital · Todos os direitos reservados.
+                </div>
+                <div class="footer__bottom-links">
+                    <a href="politica-de-privacidade.html" class="footer__bottom-link">Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Pre-select service from URL param
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            const servico = params.get('servico');
+            if (servico) {
+                const sel = document.getElementById('service');
+                if (sel) {
+                    const opt = sel.querySelector(`option[value="${servico}"]`);
+                    if (opt) opt.selected = true;
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>

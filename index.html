@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Hackware — Consultoria em Segurança Ofensiva</title>
+  <meta name="description"
+    content="A Hackware conduz avaliações ofensivas de segurança — pentest em aplicações, infraestrutura on-premise & nuvem, aplicações móveis, operações de red team — com metodologia estruturada e foco em risco operacional real." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://hackware.tech/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hackware.tech/" />
+  <meta property="og:title" content="Hackware — Consultoria em Segurança Ofensiva" />
+  <meta property="og:description"
+    content="Avaliações ofensivas com foco em risco real. Pentest, Red Team e muito mais." />
+  <meta property="og:site_name" content="Hackware" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hackware — Consultoria em Segurança Ofensiva" />
+  <meta name="twitter:description"
+    content="Avaliações ofensivas com foco em risco real. Pentest, Red Team e muito mais." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ── Hero SVG node pulse ───────────────────────────── */
+    @keyframes nodePulse {
+
+      0%,
+      100% {
+        opacity: 0.6;
+        r: 4;
+      }
+
+      50% {
+        opacity: 1;
+        r: 6;
+      }
+    }
+
+    @keyframes edgeDraw {
+      from {
+        stroke-dashoffset: 300;
+      }
+
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes scanLine {
+      0% {
+        transform: translateY(0px);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(440px);
+        opacity: 0;
+      }
+    }
+
+    .hero-node {
+      animation: nodePulse 3s ease-in-out infinite;
+    }
+
+    .hero-edge {
+      stroke-dasharray: 300;
+      animation: edgeDraw 2s ease forwards;
+    }
+
+    .hero-scan {
+      animation: scanLine 6s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav class="navbar" id="navbar" aria-label="Navegação principal">
+    <div class="container navbar__inner">
+
+      <!-- Logo -->
+      <a href="/" class="navbar__logo" aria-label="Hackware — Página inicial">
+        <img src="images/hackware-logo.png" alt="Hackware" class="navbar__logo-img" />
+      </a>
+
+      <!-- Desktop Nav -->
+      <ul class="navbar__nav" role="list">
+        <li><a href="#servicos" class="navbar__link">Serviços</a></li>
+        <li><a href="#metodologia" class="navbar__link">Metodologia</a></li>
+        <li><a href="#diferenciais" class="navbar__link">Diferenciais</a></li>
+        <li><a href="#autoridade" class="navbar__link">Sobre</a></li>
+      </ul>
+
+      <!-- Actions -->
+      <div class="navbar__actions">
+        <a href="contato.html" class="btn btn--primary" id="nav-cta">
+          Solicitar avaliação
+        </a>
+        <button class="navbar__burger" id="burger" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="navbar__mobile" id="mobile-menu" role="navigation" aria-label="Menu mobile">
+      <a href="#servicos" class="navbar__mobile-link">Serviços</a>
+      <a href="#metodologia" class="navbar__mobile-link">Metodologia</a>
+      <a href="#diferenciais" class="navbar__mobile-link">Diferenciais</a>
+      <a href="#autoridade" class="navbar__mobile-link">Sobre</a>
+      <a href="contato.html" class="btn btn--primary" style="width:100%;justify-content:center;margin-top:0.5rem;">
+        Solicitar avaliação
+      </a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section class="hero" id="hero" aria-labelledby="hero-headline">
+      <div class="container hero__inner">
+
+        <!-- Content -->
+        <div class="hero__content">
+          <span class="eyebrow">// Segurança Ofensiva</span>
+
+          <h1 class="hero__headline" id="hero-headline">
+            Inteligência para defesas que precisam funcionar no mundo real.<br />
+            <em>Antes do incidente.</em>
+          </h1>
+
+          <p class="hero__subtitle">
+            A Hackware conduz avaliações ofensivas de segurança — pentest em aplicações, infraestrutura on-premise &
+            nuvem, aplicações móveis, operações de red team — com metodologia estruturada e foco em risco operacional
+            real.
+          </p>
+
+          <div class="hero__actions">
+            <a href="contato.html" class="btn btn--primary btn--lg" id="hero-cta-primary">
+              <i class="ph ph-arrow-right" aria-hidden="true"></i>
+              Solicitar avaliação
+            </a>
+            <a href="#metodologia" class="btn btn--outline btn--lg" id="hero-cta-secondary">
+              Conhecer nossa abordagem
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Graphic -->
+        <div class="hero__graphic" aria-hidden="true">
+          <svg viewBox="0 0 480 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Background grid -->
+            <defs>
+              <pattern id="smallGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+                <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#1E2D4A" stroke-width="0.5" />
+              </pattern>
+              <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#5B8CFF" stop-opacity="0.15" />
+                <stop offset="100%" stop-color="#5B8CFF" stop-opacity="0" />
+              </radialGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                <feMerge>
+                  <feMergeNode in="coloredBlur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+              <linearGradient id="lineGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#5B8CFF" stop-opacity="0" />
+                <stop offset="50%" stop-color="#5B8CFF" stop-opacity="0.6" />
+                <stop offset="100%" stop-color="#22D3EE" stop-opacity="0.2" />
+              </linearGradient>
+              <linearGradient id="lineGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.5" />
+                <stop offset="100%" stop-color="#5B8CFF" stop-opacity="0.1" />
+              </linearGradient>
+            </defs>
+
+            <!-- Grid bg -->
+            <rect width="480" height="440" fill="url(#smallGrid)" opacity="0.6" />
+
+            <!-- Glow center -->
+            <ellipse cx="240" cy="220" rx="200" ry="180" fill="url(#glowGrad)" />
+
+            <!-- Scan line -->
+            <line x1="0" y1="0" x2="480" y2="0" stroke="url(#lineGrad1)" stroke-width="1" class="hero-scan" />
+
+            <!-- Edges / connections -->
+            <line x1="80" y1="100" x2="240" y2="80" stroke="url(#lineGrad1)" stroke-width="1" class="hero-edge"
+              style="animation-delay:0.1s" />
+            <line x1="240" y1="80" x2="380" y2="140" stroke="url(#lineGrad1)" stroke-width="1" class="hero-edge"
+              style="animation-delay:0.3s" />
+            <line x1="240" y1="80" x2="240" y2="220" stroke="url(#lineGrad2)" stroke-width="1" class="hero-edge"
+              style="animation-delay:0.5s" />
+            <line x1="80" y1="100" x2="120" y2="240" stroke="#22D3EE" stroke-width="0.8" stroke-opacity="0.3"
+              class="hero-edge" style="animation-delay:0.7s" />
+            <line x1="120" y1="240" x2="240" y2="220" stroke="url(#lineGrad1)" stroke-width="1" class="hero-edge"
+              style="animation-delay:0.9s" />
+            <line x1="240" y1="220" x2="380" y2="140" stroke="url(#lineGrad2)" stroke-width="1" class="hero-edge"
+              style="animation-delay:1.1s" />
+            <line x1="240" y1="220" x2="360" y2="320" stroke="#5B8CFF" stroke-width="0.8" stroke-opacity="0.3"
+              class="hero-edge" style="animation-delay:1.3s" />
+            <line x1="120" y1="240" x2="160" y2="360" stroke="#22D3EE" stroke-width="0.8" stroke-opacity="0.25"
+              class="hero-edge" style="animation-delay:1.5s" />
+            <line x1="360" y1="320" x2="380" y2="140" stroke="url(#lineGrad2)" stroke-width="0.8" stroke-opacity="0.3"
+              class="hero-edge" style="animation-delay:1.7s" />
+            <line x1="160" y1="360" x2="360" y2="320" stroke="url(#lineGrad1)" stroke-width="0.8" stroke-opacity="0.2"
+              class="hero-edge" style="animation-delay:1.9s" />
+
+            <!-- Dashed secondary connections -->
+            <line x1="80" y1="100" x2="380" y2="140" stroke="#5B8CFF" stroke-width="0.5" stroke-opacity="0.12"
+              stroke-dasharray="4 6" />
+            <line x1="120" y1="240" x2="360" y2="320" stroke="#22D3EE" stroke-width="0.5" stroke-opacity="0.12"
+              stroke-dasharray="4 6" />
+
+            <!-- Nodes -->
+            <!-- Central node -->
+            <circle cx="240" cy="220" r="8" fill="#5B8CFF" fill-opacity="0.15" stroke="#5B8CFF" stroke-width="1.5"
+              class="hero-node" style="animation-delay:0s" filter="url(#glow)" />
+            <circle cx="240" cy="220" r="3" fill="#5B8CFF" class="hero-node" style="animation-delay:0s" />
+
+            <!-- Top node -->
+            <circle cx="240" cy="80" r="6" fill="#22D3EE" fill-opacity="0.15" stroke="#22D3EE" stroke-width="1.5"
+              class="hero-node" style="animation-delay:0.4s" />
+            <circle cx="240" cy="80" r="2.5" fill="#22D3EE" />
+
+            <!-- Left top -->
+            <circle cx="80" cy="100" r="5" fill="#5B8CFF" fill-opacity="0.12" stroke="#5B8CFF" stroke-width="1"
+              class="hero-node" style="animation-delay:0.8s" />
+            <circle cx="80" cy="100" r="2" fill="#5B8CFF" />
+
+            <!-- Right top -->
+            <circle cx="380" cy="140" r="6" fill="#22D3EE" fill-opacity="0.12" stroke="#22D3EE" stroke-width="1"
+              class="hero-node" style="animation-delay:1.2s" />
+            <circle cx="380" cy="140" r="2.5" fill="#22D3EE" />
+
+            <!-- Left mid -->
+            <circle cx="120" cy="240" r="5" fill="#5B8CFF" fill-opacity="0.10" stroke="#5B8CFF" stroke-width="1"
+              class="hero-node" style="animation-delay:1.6s" />
+            <circle cx="120" cy="240" r="2" fill="#5B8CFF" />
+
+            <!-- Right bottom -->
+            <circle cx="360" cy="320" r="5" fill="#22D3EE" fill-opacity="0.10" stroke="#22D3EE" stroke-width="1"
+              class="hero-node" style="animation-delay:2s" />
+            <circle cx="360" cy="320" r="2" fill="#22D3EE" />
+
+            <!-- Bottom left -->
+            <circle cx="160" cy="360" r="4" fill="#5B8CFF" fill-opacity="0.08" stroke="#5B8CFF" stroke-width="1"
+              class="hero-node" style="animation-delay:2.4s" />
+            <circle cx="160" cy="360" r="2" fill="#5B8CFF" />
+
+            <!-- Small satellite nodes -->
+            <circle cx="300" cy="50" r="2" fill="#5B8CFF" stroke-opacity="0.4" class="hero-node"
+              style="animation-delay:0.6s" />
+            <circle cx="420" cy="240" r="2" fill="#22D3EE" stroke-opacity="0.3" class="hero-node"
+              style="animation-delay:1.0s" />
+            <circle cx="60" cy="340" r="2" fill="#5B8CFF" stroke-opacity="0.3" class="hero-node"
+              style="animation-delay:1.4s" />
+            <circle cx="440" cy="380" r="2" fill="#22D3EE" stroke-opacity="0.3" class="hero-node"
+              style="animation-delay:1.8s" />
+
+            <!-- Dotted paths to satellites -->
+            <line x1="240" y1="80" x2="300" y2="50" stroke="#5B8CFF" stroke-width="0.5" stroke-opacity="0.2"
+              stroke-dasharray="3 5" />
+            <line x1="380" y1="140" x2="420" y2="240" stroke="#22D3EE" stroke-width="0.5" stroke-opacity="0.2"
+              stroke-dasharray="3 5" />
+
+            <!-- Corner labels (monospace style indicators) -->
+            <text x="16" y="24" font-family="'JetBrains Mono', monospace" font-size="9" fill="#5B8CFF"
+              fill-opacity="0.4">SURFACE MAP</text>
+            <text x="16" y="36" font-family="'JetBrains Mono', monospace" font-size="8" fill="#5C6E8A">v2.4 ·
+              ACTIVE</text>
+
+            <text x="390" y="420" font-family="'JetBrains Mono', monospace" font-size="8" fill="#5C6E8A"
+              text-anchor="end">7 NODES · 11 PATHS</text>
+
+            <!-- Status indicator -->
+            <circle cx="450" cy="24" r="3" fill="#22D3EE">
+              <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+            </circle>
+            <text x="442" y="28" font-family="'JetBrains Mono', monospace" font-size="8" fill="#22D3EE"
+              text-anchor="end">LIVE</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="hero__scroll" aria-hidden="true">scroll</div>
+    </section>
+
+    <!-- ============================================================
+         TRUST BAR
+    ============================================================ -->
+    <div class="trust-bar" id="trust" aria-label="Indicadores de credibilidade">
+      <div class="container trust-bar__inner">
+
+        <div class="trust-bar__stat">
+          <div class="trust-bar__number" data-count="180" data-prefix="+" data-suffix="">+180</div>
+          <div class="trust-bar__label">engajamentos entregues</div>
+        </div>
+
+        <div class="trust-bar__divider" aria-hidden="true"></div>
+
+        <div class="trust-bar__stat">
+          <div class="trust-bar__number" data-count="12" data-suffix="+">12+</div>
+          <div class="trust-bar__label">setores atendidos</div>
+        </div>
+
+        <div class="trust-bar__divider" aria-hidden="true"></div>
+
+        <div class="trust-bar__stat">
+          <div class="trust-bar__number">6+</div>
+          <div class="trust-bar__label">anos em operação</div>
+        </div>
+
+        <div class="trust-bar__divider" aria-hidden="true"></div>
+
+        <div class="trust-bar__certs" aria-label="Certificações da equipe">
+          <span class="trust-bar__cert-badge">OSCP</span>
+          <span class="trust-bar__cert-badge">CRTO</span>
+          <span class="trust-bar__cert-badge">eWPTX</span>
+          <span class="trust-bar__cert-badge">PNPT</span>
+          <span class="trust-bar__cert-badge">CEH</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         SERVICES
+    ============================================================ -->
+    <section class="section" id="servicos" aria-labelledby="servicos-title">
+      <div class="container">
+
+        <header class="section-header reveal">
+          <span class="eyebrow">// Serviços</span>
+          <h2 class="section-title" id="servicos-title">Avaliações ofensivas para cada superfície de ataque.</h2>
+          <p class="section-subtitle">
+            Cada engajamento é desenhado para o contexto específico da organização — com escopo claro, metodologia
+            estruturada e entrega que comunica risco real.
+          </p>
+        </header>
+
+        <div class="services__grid">
+
+          <!-- Web -->
+          <article class="service-card reveal reveal-delay-1" id="card-web">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+            </div>
+            <div class="service-card__body">
+              <span class="service-card__label">Web</span>
+              <h3 class="service-card__title">Pentest em Aplicações Web</h3>
+              <p class="service-card__sub">Avalie o que está exposto antes que seja explorado.</p>
+              <p class="service-card__desc">Testamos aplicações web com profundidade técnica real — autenticação,
+                controle de acesso, lógica de negócio, injeção, APIs e integrações. Cada achado documentado com prova de
+                exploração, impacto de negócio e remediação acionável.</p>
+            </div>
+            <a href="contato.html?servico=web" class="service-card__link">Solicitar avaliação <i
+                class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <!-- Infra -->
+          <article class="service-card reveal reveal-delay-2" id="card-infra">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+                <circle cx="7" cy="10" r="1.5" />
+                <circle cx="12" cy="10" r="1.5" />
+                <circle cx="17" cy="10" r="1.5" />
+              </svg>
+            </div>
+            <div class="service-card__body">
+              <span class="service-card__label">Infraestrutura</span>
+              <h3 class="service-card__title">Pentest em Infraestrutura</h3>
+              <p class="service-card__sub">Redes e perímetros têm falhas que scanners não encontram.</p>
+              <p class="service-card__desc">Avaliamos infraestrutura externa e interna, ambientes híbridos e cloud —
+                mapeando caminhos reais de comprometimento: escalada de privilégios, movimento lateral e acesso a ativos
+                críticos.</p>
+            </div>
+            <a href="contato.html?servico=infraestrutura" class="service-card__link">Solicitar avaliação <i
+                class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <!-- Mobile -->
+          <article class="service-card reveal reveal-delay-3" id="card-mobile">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                <line x1="12" y1="18" x2="12.01" y2="18" />
+                <path d="M9 6h6M9 10h4" />
+              </svg>
+            </div>
+            <div class="service-card__body">
+              <span class="service-card__label">Mobile · Android · iOS</span>
+              <h3 class="service-card__title">Pentest em Aplicações Móveis</h3>
+              <p class="service-card__sub">Mobile amplia a superfície de ataque além do que a maioria percebe.</p>
+              <p class="service-card__desc">Análise estática, dinâmica e de tráfego para Android e iOS. Cobrimos
+                armazenamento inseguro, autenticação inadequada, exposição de dados e falhas de comunicação em contexto
+                real de uso.</p>
+            </div>
+            <a href="contato.html?servico=mobile" class="service-card__link">Solicitar avaliação <i
+                class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <!-- Red Team — wide card -->
+          <article class="service-card service-card--wide reveal" id="card-redteam">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <div class="service-card__body">
+              <span class="service-card__label">Adversary Simulation</span>
+              <h3 class="service-card__title">Red Team</h3>
+              <p class="service-card__sub">Simule um adversário determinado. Antes que um real apareça.</p>
+              <p class="service-card__desc">
+                Operações que replicam TTPs de ameaças reais com objetivo definido e escopo fechado. Testamos pessoas,
+                processos e tecnologia de forma integrada — avaliando não apenas as vulnerabilidades técnicas, mas a
+                capacidade real de detecção e resposta da sua organização. Red Team é o teste de maturidade mais próximo
+                de um ataque real.
+              </p>
+            </div>
+            <a href="contato.html?servico=redteam" class="service-card__link"
+              style="white-space:nowrap;align-self:flex-start;margin-top:1.5rem;">Discutir operação <i
+                class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <!-- Other -->
+          <article class="service-card reveal" id="card-outros" style="grid-column:1/-1">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3" />
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14" />
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07" />
+              </svg>
+            </div>
+            <div class="service-card__body">
+              <span class="service-card__label">Especializado</span>
+              <h3 class="service-card__title">Serviços Ofensivos Especializados</h3>
+              <p class="service-card__sub">Cada ambiente tem particularidades que exigem abordagem específica.</p>
+              <p class="service-card__desc">Revisão de arquitetura de segurança, avaliações de ambientes cloud,
+                exercícios adversariais customizados e outras modalidades ofensivas adaptadas ao contexto da
+                organização. Entre em contato para discutir seu escopo.</p>
+            </div>
+            <a href="contato.html" class="service-card__link">Falar com especialista <i class="ph ph-arrow-right"
+                aria-hidden="true"></i></a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         METHODOLOGY
+    ============================================================ -->
+    <section class="section section--surface" id="metodologia" aria-labelledby="metodologia-title">
+      <div class="container">
+
+        <header class="section-header reveal">
+          <span class="eyebrow">// Como trabalhamos</span>
+          <h2 class="section-title" id="metodologia-title">Uma metodologia que diferencia avaliação de relatório.</h2>
+          <p class="section-subtitle">
+            Cada engajamento segue um processo estruturado — do alinhamento inicial à entrega e suporte à remediação.
+            Sem caixas marcadas. Sem atalhos.
+          </p>
+        </header>
+
+        <div class="methodology__steps">
+
+          <div class="method-step reveal reveal-delay-1">
+            <div class="method-step__number" aria-hidden="true">01</div>
+            <span class="method-step__step-label">// Etapa 01</span>
+            <h3 class="method-step__title">Definição de Escopo</h3>
+            <p class="method-step__sub">Clareza antes de qualquer teste.</p>
+            <p class="method-step__desc">Alinhamos escopo técnico, hipóteses de ataque, critérios de sucesso e limites
+              operacionais com seus stakeholders. O que não está definido no início não pode ser cobrado no final.</p>
+          </div>
+
+          <div class="method-step reveal reveal-delay-2">
+            <div class="method-step__number" aria-hidden="true">02</div>
+            <span class="method-step__step-label">// Etapa 02</span>
+            <h3 class="method-step__title">Reconhecimento e Mapeamento</h3>
+            <p class="method-step__sub">Conheça sua superfície de ataque como um adversário a conheceria.</p>
+            <p class="method-step__desc">Mapeamos ativos expostos, pontos de entrada, relações de confiança e vetores
+              relevantes — antes de qualquer interação ativa com o alvo.</p>
+          </div>
+
+          <div class="method-step reveal reveal-delay-3">
+            <div class="method-step__number" aria-hidden="true">03</div>
+            <span class="method-step__step-label">// Etapa 03</span>
+            <h3 class="method-step__title">Execução Ofensiva</h3>
+            <p class="method-step__sub">Técnica de estado da arte. Profundidade real.</p>
+            <p class="method-step__desc">Realizamos o engajamento com técnicas atualizadas — não automatizadas. Cada
+              achado explorado até seu impacto operacional, com documentação completa da cadeia de comprometimento.</p>
+          </div>
+
+          <div class="method-step reveal reveal-delay-1">
+            <div class="method-step__number" aria-hidden="true">04</div>
+            <span class="method-step__step-label">// Etapa 04</span>
+            <h3 class="method-step__title">Análise e Priorização</h3>
+            <p class="method-step__sub">Risco de negócio, não lista de CVEs.</p>
+            <p class="method-step__desc">Traduzimos achados técnicos em risco operacional real. Cada vulnerabilidade
+              priorizada por impacto, probabilidade de exploração e consequência — não apenas por pontuação genérica de
+              severidade.</p>
+          </div>
+
+          <div class="method-step reveal reveal-delay-2">
+            <div class="method-step__number" aria-hidden="true">05</div>
+            <span class="method-step__step-label">// Etapa 05</span>
+            <h3 class="method-step__title">Relatório e Debriefing</h3>
+            <p class="method-step__sub">Dois públicos. Dois relatórios.</p>
+            <p class="method-step__desc">Relatório técnico detalhado para as equipes de segurança e TI. Sumário
+              executivo direto para liderança e comitê. Seguido de sessão de debriefing para alinhamento e resposta a
+              dúvidas.</p>
+          </div>
+
+          <div class="method-step reveal reveal-delay-3">
+            <div class="method-step__number" aria-hidden="true">06</div>
+            <span class="method-step__step-label">// Etapa 06</span>
+            <h3 class="method-step__title">Suporte Pós-Entrega</h3>
+            <p class="method-step__sub">O trabalho não termina na entrega.</p>
+            <p class="method-step__desc">Suporte durante o ciclo de remediação e, quando aplicável, reteste para
+              validação das correções implementadas — garantindo que as vulnerabilidades encontradas foram de fato
+              endereçadas.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DIFFERENTIALS
+    ============================================================ -->
+    <section class="section" id="diferenciais" aria-labelledby="diferenciais-title">
+      <div class="container">
+
+        <header class="section-header section-header--center reveal">
+          <span class="eyebrow">// Por que a Hackware</span>
+          <h2 class="section-title" id="diferenciais-title">A diferença entre uma avaliação e uma avaliação que importa.
+          </h2>
+          <p class="section-subtitle">
+            Não somos um fornecedor de relatório. Somos o parceiro técnico que mostra o que está realmente em risco.
+          </p>
+        </header>
+
+        <div class="differentials__grid">
+
+          <div class="diff-item reveal reveal-delay-1">
+            <span class="diff-item__number">01</span>
+            <div class="diff-item__body">
+              <h3 class="diff-item__title">Adversário, não auditor</h3>
+              <p class="diff-item__desc">Avaliamos sua organização com a perspectiva e as técnicas de um atacante real.
+                Não marcamos caixas de conformidade — encontramos o que pode ser comprometido.</p>
+            </div>
+          </div>
+
+          <div class="diff-item reveal reveal-delay-2">
+            <span class="diff-item__number">02</span>
+            <div class="diff-item__body">
+              <h3 class="diff-item__title">Impacto de negócio, não lista de CVEs</h3>
+              <p class="diff-item__desc">Cada achado contextualizado em termos operacionais: o que pode ser acessado,
+                quem é afetado e o que custa não corrigir. Linguagem técnica para as equipes; clareza executiva para a
+                liderança.</p>
+            </div>
+          </div>
+
+          <div class="diff-item reveal reveal-delay-3">
+            <span class="diff-item__number">03</span>
+            <div class="diff-item__body">
+              <h3 class="diff-item__title">Equipe sênior em todos os engajamentos</h3>
+              <p class="diff-item__desc">Sem terceirização encoberta. Sem análises automatizadas disfarçadas de manual.
+                Profissionais seniores conduzem, revisam e assinam cada entrega.</p>
+            </div>
+          </div>
+
+          <div class="diff-item reveal reveal-delay-4">
+            <span class="diff-item__number">04</span>
+            <div class="diff-item__body">
+              <h3 class="diff-item__title">Escopo definido. Processo rastreável.</h3>
+              <p class="diff-item__desc">Todo engajamento tem escopo documentado, critérios de sucesso claros e
+                metodologia registrada. Você sabe exatamente o que foi testado, como e com qual resultado.</p>
+            </div>
+          </div>
+
+          <div class="diff-item reveal reveal-delay-5">
+            <span class="diff-item__number">05</span>
+            <div class="diff-item__body">
+              <h3 class="diff-item__title">Relatórios que não precisam de tradutor</h3>
+              <p class="diff-item__desc">Técnico detalhado para a equipe. Executivo direto para o comitê. As duas
+                entregas são produzidas por padrão — sem customização adicional solicitada.</p>
+            </div>
+          </div>
+
+          <!-- CTA box -->
+          <div class="diff-item reveal reveal-delay-1"
+            style="background:var(--surface);border:1px solid var(--border);border-radius:10px;border-left:2px solid var(--accent);flex-direction:column;padding:2rem;">
+            <h3 class="diff-item__title" style="margin-bottom:0.75rem;">Pronto para validar sua postura de segurança?
+            </h3>
+            <p class="diff-item__desc" style="margin-bottom:1.5rem;">Discuta seu contexto com um especialista. Sem
+              compromisso.</p>
+            <a href="contato.html" class="btn btn--primary">Falar com um especialista</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         AUTHORITY / TRUST
+    ============================================================ -->
+    <section class="section section--surface" id="autoridade" aria-labelledby="autoridade-title">
+      <div class="container">
+
+        <header class="section-header section-header--center reveal">
+          <span class="eyebrow">// Autoridade técnica</span>
+          <h2 class="section-title" id="autoridade-title">Credibilidade construída por profundidade, não por marketing.
+          </h2>
+          <p class="section-subtitle">Nossa reputação é construída por quem executa o trabalho — e pelo que entregamos.
+          </p>
+        </header>
+
+        <!-- Stats -->
+        <div class="authority__stats reveal" style="max-width:700px;margin:0 auto 3rem;">
+          <div class="authority__stat">
+            <div class="authority__stat-number" data-count="180" data-prefix="+" data-suffix="">+180</div>
+            <div class="authority__stat-label">Engajamentos<br>entregues</div>
+          </div>
+          <div class="authority__stat">
+            <div class="authority__stat-number" data-count="12" data-suffix="+">12+</div>
+            <div class="authority__stat-label">Setores<br>atendidos</div>
+          </div>
+          <div class="authority__stat">
+            <div class="authority__stat-number">6+</div>
+            <div class="authority__stat-label">Anos em<br>operação</div>
+          </div>
+        </div>
+
+        <div class="authority__grid">
+
+          <!-- Left: testimonials -->
+          <div>
+            <div class="testimonial reveal reveal-delay-1" style="margin-bottom:1.5rem;">
+              <div class="testimonial__quote" aria-hidden="true">"</div>
+              <p class="testimonial__text">
+                "A Hackware foi o primeiro pentest que gerou ação real da liderança. O relatório executivo foi
+                apresentado no board sem nenhuma edição adicional nossa."
+              </p>
+              <div class="testimonial__author">CISO · Fintech com operação em 4 países</div>
+              <div class="testimonial__role">SETOR · FINANCEIRO</div>
+            </div>
+
+            <div class="testimonial reveal reveal-delay-2">
+              <div class="testimonial__quote" aria-hidden="true">"</div>
+              <p class="testimonial__text">
+                "Esperávamos um relatório de vulnerabilidades. Recebemos uma análise de risco que mudou a prioridade do
+                nosso roadmap de segurança."
+              </p>
+              <div class="testimonial__author">Diretor de Tecnologia · Holding com operação nacional</div>
+              <div class="testimonial__role">SETOR · VAREJO</div>
+            </div>
+          </div>
+
+          <!-- Right: certs + sectors -->
+          <div class="authority__side">
+
+            <!-- Certifications -->
+            <div class="authority__side-block reveal">
+              <p class="authority__side-title">Certificações da equipe</p>
+              <div class="authority__certs">
+                <span class="authority__cert">OSCP</span>
+                <span class="authority__cert">CRTO</span>
+                <span class="authority__cert">eWPTX</span>
+                <span class="authority__cert">PNPT</span>
+                <span class="authority__cert">CEH</span>
+                <span class="authority__cert">CPTS</span>
+              </div>
+            </div>
+
+            <!-- Sectors -->
+            <div class="authority__side-block reveal">
+              <p class="authority__side-title">Setores atendidos</p>
+              <div class="authority__sectors">
+                <span class="authority__sector-tag">Finanças</span>
+                <span class="authority__sector-tag">Tecnologia</span>
+                <span class="authority__sector-tag">Saúde</span>
+                <span class="authority__sector-tag">Varejo</span>
+                <span class="authority__sector-tag">Educação</span>
+                <span class="authority__sector-tag">Indústria</span>
+                <span class="authority__sector-tag">Governo</span>
+                <span class="authority__sector-tag">Telecom</span>
+                <span class="authority__sector-tag">Seguros</span>
+                <span class="authority__sector-tag">Logística</span>
+              </div>
+            </div>
+
+            <!-- Content link -->
+            <div class="authority__side-block reveal">
+              <p class="authority__side-title">Conteúdo técnico</p>
+              <a href="#" class="authority__content-link">
+                <div class="authority__content-link-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14,2 14,8 20,8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                    <polyline points="10,9 9,9 8,9" />
+                  </svg>
+                </div>
+                <div class="authority__content-link-body">
+                  <div class="authority__content-link-label">Em breve</div>
+                  <div class="authority__content-link-title">Publicações técnicas e pesquisas →</div>
+                </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA FINAL
+    ============================================================ -->
+    <section class="section cta-final" id="contato-cta" aria-labelledby="cta-final-title">
+      <div class="cta-final__glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="cta-final__inner reveal">
+          <span class="eyebrow">// Próximos passos</span>
+          <h2 class="cta-final__headline" id="cta-final-title">
+            Pronto para saber onde sua organização está exposta?
+          </h2>
+          <p class="cta-final__hint">
+            Fale com a Hackware. Discutimos seu contexto, definimos um escopo adequado e iniciamos a avaliação.
+          </p>
+          <div class="cta-final__actions">
+            <a href="contato.html" class="btn btn--primary btn--lg" id="final-cta-primary">
+              <i class="ph ph-envelope" aria-hidden="true"></i>
+              Solicitar avaliação
+            </a>
+            <a href="contato.html" class="btn btn--outline btn--lg" id="final-cta-secondary">
+              Falar com um especialista
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__main">
+
+        <!-- Brand -->
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <img src="images/hackware-logo.png" alt="Hackware" class="footer__logo-img" />
+          </div>
+          <p class="footer__tagline">
+            Inteligência para defesas que precisam funcionar no mundo real.
+          </p>
+        </div>
+
+        <!-- Services -->
+        <div class="footer__col">
+          <h3 class="footer__col-title">Serviços</h3>
+          <ul class="footer__links" role="list">
+            <li><a href="contato.html?servico=web" class="footer__link">Pentest Web</a></li>
+            <li><a href="contato.html?servico=infraestrutura" class="footer__link">Pentest Infraestrutura</a></li>
+            <li><a href="contato.html?servico=mobile" class="footer__link">Pentest Mobile</a></li>
+            <li><a href="contato.html?servico=redteam" class="footer__link">Red Team</a></li>
+            <li><a href="contato.html" class="footer__link">Outros serviços</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div class="footer__col">
+          <h3 class="footer__col-title">Empresa</h3>
+          <ul class="footer__links" role="list">
+            <li><a href="#metodologia" class="footer__link">Metodologia</a></li>
+            <li><a href="#diferenciais" class="footer__link">Diferenciais</a></li>
+            <li><a href="#autoridade" class="footer__link">Sobre</a></li>
+            <li><a href="politica-de-privacidade.html" class="footer__link">Política de Privacidade</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer__col">
+          <h3 class="footer__col-title">Contato</h3>
+          <ul class="footer__links" role="list">
+            <li>
+              <a href="mailto:contato@hackware.tech" class="footer__contact-email">
+                contato@hackware.tech
+              </a>
+            </li>
+            <li><a href="contato.html" class="footer__link" style="margin-top:0.5rem;display:inline-block;">Formulário
+                de contato</a></li>
+          </ul>
+          <div class="footer__social" aria-label="Redes sociais">
+            <a href="https://linkedin.com/company/hackware" target="_blank" rel="noopener noreferrer"
+              class="footer__social-link" aria-label="LinkedIn da Hackware">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer__bottom">
+        <div class="footer__bottom-left">
+          <span>© 2025 Hackware Tecnologia e Inteligência Digital · Todos os direitos reservados.</span>
+        </div>
+        <div class="footer__bottom-links">
+          <a href="politica-de-privacidade.html" class="footer__bottom-link">Privacidade</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
