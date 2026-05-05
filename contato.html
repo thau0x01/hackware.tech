@@ -24,6 +24,9 @@
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
 
+    <!-- Cloudflare Turnstile -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -126,6 +129,9 @@
 
                         </div>
 
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAADJqoiK4IYUcDgOd"
+                            style="display:flex;justify-content:center;margin:1.5rem 0;"></div>
+
                         <button type="submit" class="btn btn--primary btn--lg form-submit" id="contact-submit">
                             <i class="ph ph-paper-plane-tilt" aria-hidden="true"></i>
                             Enviar mensagem
@@ -152,9 +158,10 @@
                 <!-- Contact alternatives -->
                 <div style="max-width:640px;margin:2rem auto 0;text-align:center;" class="reveal">
                     <p style="font-size:0.875rem;color:var(--text-faint);">
-                        Prefere contato direto?
-                        <a href="mailto:***@***.***"
-                            style="color:var(--accent);font-weight:600;">***@***.***</a>
+                        Prefere outro canal?
+                        <a href="https://linkedin.com/company/hackwaretech" target="_blank"
+                            rel="noopener noreferrer"
+                            style="color:var(--accent);font-weight:600;">Conecte-se via LinkedIn</a>
                     </p>
                 </div>
 
@@ -203,8 +210,7 @@
                 <div class="footer__col">
                     <h3 class="footer__col-title">Contato</h3>
                     <ul class="footer__links">
-                        <li><a href="mailto:***@***.***"
-                                class="footer__contact-email">***@***.***</a></li>
+                        <li><a href="contato.html" class="footer__link">Fale conosco</a></li>
                     </ul>
                     <div class="footer__social">
                         <a href="https://linkedin.com/company/hackwaretech" target="_blank" rel="noopener noreferrer"

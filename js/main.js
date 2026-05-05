@@ -106,11 +106,15 @@
 })();
 
 /* ------------------------------------------------------------
-   6. Contact Form Handling (index.html inline form)
+   6. Contact Form Handling (contato.html)
    ------------------------------------------------------------ */
 (function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
+
+  // Endpoint do Cloudflare Worker que envia via MailerSend.
+  // Substitua pela URL final após `wrangler deploy`.
+  const ENDPOINT = 'https://contact-site.hackware.workers.dev';
 
   const successEl = document.getElementById('form-success');
   const submitBtn = form.querySelector('[type="submit"]');
@@ -144,23 +148,30 @@
 
     if (!allValid) return;
 
-    // Disable button and show loading state
     submitBtn.disabled = true;
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Enviando...';
 
-    // Simulate async submission (replace with actual endpoint when available)
-    await new Promise(resolve => setTimeout(resolve, 1200));
+    const data = Object.fromEntries(new FormData(form).entries());
 
-    // Show success state
-    form.style.display = 'none';
-    if (successEl) {
-      successEl.classList.add('visible');
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      form.style.display = 'none';
+      if (successEl) successEl.classList.add('visible');
+    } catch (err) {
+      console.error('Falha ao enviar formulário:', err);
+      alert('Não foi possível enviar sua mensagem agora. Tente novamente em instantes.');
+      if (window.turnstile) window.turnstile.reset();
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
     }
-
-    // Reset
-    submitBtn.disabled = false;
-    submitBtn.textContent = originalText;
   });
 })();
 

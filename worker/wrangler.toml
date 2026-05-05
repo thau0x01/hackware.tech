@@ -1,0 +1,16 @@
+name = "contact-site"
+main = "src/index.js"
+compatibility_date = "2026-05-01"
+
+# Para anexar o Worker a uma rota personalizada (recomendado para evitar CORS),
+# descomente e ajuste — o domínio precisa estar em uma zona Cloudflare:
+# routes = [
+#   { pattern = "api.hackware.tech/contact", zone_name = "hackware.tech" }
+# ]
+
+# Secrets necessários (defina via wrangler secret put):
+#   wrangler secret put MAILERSEND_API_KEY
+#   wrangler secret put TURNSTILE_SECRET_KEY
+
+# A chave de API do MailerSend é um secret, configurada via:
+#   wrangler secret put MAILERSEND_API_KEY
