@@ -12,6 +12,7 @@ compatibility_date = "2026-05-01"
 #   wrangler secret put MAILERSEND_API_KEY
 #   wrangler secret put TURNSTILE_SECRET_KEY
 #   wrangler secret put CONTACT_RECIPIENT
+#   wrangler secret put CONTACT_SENDER
 
 # A chave de API do MailerSend é um secret, configurada via:
 #   wrangler secret put MAILERSEND_API_KEY
