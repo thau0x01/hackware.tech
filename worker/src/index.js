@@ -70,7 +70,7 @@ export default {
       return json({ error: 'Verificação anti-bot ausente.' }, 400, cors);
     }
 
-    if (!env.TURNSTILE_SECRET_KEY || !env.MAILERSEND_API_KEY) {
+    if (!env.TURNSTILE_SECRET_KEY || !env.MAILERSEND_API_KEY || !env.CONTACT_RECIPIENT) {
       console.error('Secrets não configurados.');
       return json({ error: 'Serviço indisponível.' }, 500, cors);
     }
@@ -96,7 +96,7 @@ export default {
 
     const payload = {
       from: { email: '***@***.***', name: 'Site Hackware' },
-      to: [{ email: '***@***.***', name: 'Contatos do Site' }],
+      to: [{ email: env.CONTACT_RECIPIENT, name: 'Contatos do Site' }],
       reply_to: { email: fields.email, name: fields.name },
       subject: `Novo contato do site — ${fields.name} (${fields.company})`,
       html: buildHtml(fields, serviceLabel),
