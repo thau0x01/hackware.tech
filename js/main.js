@@ -240,3 +240,35 @@
 
   sections.forEach(s => observer.observe(s));
 })();
+
+
+/* ------------------------------------------------------------
+   9. Hero SVG — Parallax 3D que segue o mouse
+   ------------------------------------------------------------ */
+(function initHeroParallax() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const scene = document.querySelector('.hero__bg[data-scene]');
+  if (!scene) return;
+  const tilt = scene.querySelector('[data-tilt]');
+  if (!tilt) return;
+
+  let mx = 0, my = 0, cx = 0, cy = 0, sx = 0, sy = 0, t = 0;
+  const MAX_X = 13, MAX_Y = 19, SHIFT = 26;
+
+  window.addEventListener('mousemove', (e) => {
+    mx = (e.clientX / window.innerWidth) * 2 - 1;
+    my = (e.clientY / window.innerHeight) * 2 - 1;
+  }, { passive: true });
+
+  (function loop() {
+    t += 0.016;
+    const idleX = Math.sin(t * 0.5) * 0.16;
+    const idleY = Math.cos(t * 0.42) * 0.16;
+    cx += ((-(my + idleY) * MAX_X) - cx) * 0.05;
+    cy += (((mx + idleX) * MAX_Y) - cy) * 0.05;
+    sx += (((mx + idleX) * SHIFT) - sx) * 0.05;
+    sy += (((my + idleY) * SHIFT) - sy) * 0.05;
+    tilt.style.transform = 'translate3d(' + sx.toFixed(1) + 'px,' + sy.toFixed(1) + 'px,0) rotateX(' + cx.toFixed(2) + 'deg) rotateY(' + cy.toFixed(2) + 'deg)';
+    requestAnimationFrame(loop);
+  })();
+})();
